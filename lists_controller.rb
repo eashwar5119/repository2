@@ -8,12 +8,7 @@ class ListsController < ApplicationController
        #if params.has_key?(:order) and params[:order] == 'age'
        #@lists = List.order("age DESC")
 
-     #elsif params.has_key?(:order) and params[:order] == 'department'
-     #  @lists = List.order("department")
-     # elsif params.has_key?(:order) and params[:order] == 'salary'
-      # @lists = List.order("salary")
-    # elsif params.has_key?(:order) and params[:order] == 'age'
-     #  @lists = List.where("age >= ?" , "60")
+     
 
     # else 
     #   @lists = List.all
