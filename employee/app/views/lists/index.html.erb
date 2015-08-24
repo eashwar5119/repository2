@@ -1,0 +1,40 @@
+<h1>Listing lists</h1>
+<h2><a href="/lists?order=age">order by age</a></h2>
+<h2><a href="/lists?order=department">order by department</a></h2>
+<h2><a href="/lists?order=salary">order by salary</a></h2>
+<h2><a href="/lists?order=age">retired people</a></h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Salary</th>
+      <th>Department</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @lists.each do |list| %>
+      <tr>
+        <td><%= list.id %></td>
+        <td><%= list.name.upcase %></td>
+        <td><%= list.email %></td>
+        <td><%= list.age %></td>
+        <td><%= list.salary %></td>
+        <td><%= list.department %></td>
+        <td><%= link_to 'Show', list %></td>
+        <td><%= link_to 'Edit', edit_list_path(list) %></td>
+        <td><%= link_to 'Destroy', list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New List', new_list_path %>
+
